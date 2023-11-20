@@ -1,5 +1,5 @@
 # General
-project = "backstage"
+project = "backstage-demo"
 default_region = "ap-southeast-2"
 vpc_cidr_block = "172.31.0.0/16"
 public_subnets = {
