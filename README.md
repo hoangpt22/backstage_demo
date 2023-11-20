@@ -14,7 +14,7 @@ To start the app, set these environment variables:
 -bucket_name
 
 Then run:
-
+```sh
 docker-compose build
 docker build -t backstage/terraform-cli ./terraform
 docker-compose up -d
@@ -23,18 +23,21 @@ docker run --rm -it --workdir /app \
 	--entrypoint bash -v $${PWD}/terraform:/app \
 	--env-file .env \
 	backstage/terraform-cli
+```
 This will build the docker image and start the containers for the application and the database, after the build finishes you can visit the application at:
 localhost:3000
 
 
 ## AWS deploy
 To deploy your Backstage application on AWS with Terraform you must first set these env variables in your local machine:
+```sh
 -github_token
 -github_client_id
 -github_client_secret
 -access_key_id
 -secret_access_key
 -bucket_name
+```
 
 To let Terraform work, you need to manually create an S3 bucket in which Terraform will save the state of your infrastructure.  
 Once created, save the bucket name by replacing the `{{BUCKET-NAME}}` placeholder in the `terraform / terraform.tf` file.
